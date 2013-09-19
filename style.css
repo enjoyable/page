@@ -1,0 +1,503 @@
+body {
+	font-family: 'Segoe UI';
+	font-size: 14px;
+	min-width: 980px;
+}
+
+#header {
+	background: #333;
+}
+
+#header.collapsed {
+	height: 55px;
+}
+
+#header.expanded {
+	height: 100px;
+}
+
+#userpic {
+	position: relative;
+	float: left;
+}
+
+#header.collapsed #userpic {
+	height: 55px;
+	width: 85px;
+}
+
+#header.collapsed #userpic img {
+	height: 55px;
+	width: 55px;
+}
+
+#header.expanded #userpic,
+#header.expanded #userpic img {
+	height: 100px;
+	width: 100px;
+}
+
+#userpic .status {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0px;
+	height: 0px;
+	border-top: solid #CCC 7px;
+	border-left: solid #CCC 7px;
+	border-right: solid transparent 7px;
+	border-bottom: solid transparent 7px;
+}
+
+#userpic.online .status {
+	border-top: solid #6C0 7px;
+	border-left: solid #6C0 7px;
+}
+
+#userpic .dropdown {
+	position: absolute;
+	top: 0;
+	left: 55px;
+	width: 30px;
+	height: 55px;
+	background: #555 url(images/um-dropdown.png) center center no-repeat;
+	cursor: pointer;
+	transition: all 0.2s ease-out 0;
+}
+
+#userpic .dropdown:hover {
+	background: #666 url(images/um-dropdown.png) center center no-repeat;
+}
+
+#header.expanded #userpic .dropdown {
+	display: none;
+}
+
+#username {
+	float: left;
+	padding: 5px 0 0 15px;
+	color: #FFF;
+	line-height: 1.2;
+	font-size: 18px;
+}
+
+#usermenu {
+	position: absolute;
+	float: left;
+	height: 28px;
+	top: 60px;
+	left: 100px;
+	margin: 0 0 0 15px; 
+}
+
+#usermenu a {
+	display: inline-block;
+	height: 28px;
+	padding: 0 8px 0 1px;
+	margin-right: 10px;
+	background: #4A4A4A;
+	color: #CCC;
+	text-decoration: none;
+	line-height: 2.1;
+	transition: all 0.2s ease-out 0;
+}
+
+#header.collapsed #usermenu {
+	display: none;
+	top: 55px;
+	left: 55px;
+	margin: 0;
+	z-index: 999;
+}
+
+#header.collapsed #usermenu a {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 30px;
+	height: 30px;
+}
+
+#header.collapsed #usermenu a i {
+
+}
+
+#header.collapsed #usermenu a span {
+	display: none;
+}
+
+#usermenu a:hover {
+	background: #5A5A5A;
+	transition: all 0.1s ease-out 0;	
+}
+
+#usermenu a:active {
+	background: #404040;
+	transition: none;
+}
+
+#usermenu a i {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	font-size: 13px;
+	background: #009;
+}
+
+#usermenu a.profile i {
+	background: url(images/um-profile.png) 0 0 no-repeat; /* prefix "um" means usermenu */
+}
+
+#usermenu a.settings i {
+	background: url(images/um-settings.png) 0 0 no-repeat;
+}
+
+#usermenu a.logout i {
+	background: url(images/um-logout.png) 0 0 no-repeat;
+}
+
+#notifications {
+	position: relative;
+}
+
+#header.collapsed #notifications {
+	top: 0;
+	left: 0;
+}
+
+#header.expanded #notifications {
+	top: 60px;
+	left: 0	;
+}
+
+#header .toggle-button {
+	display: block;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	top: 60px;
+	right: 15px;
+	background: url(images/um-toggle.png) 0 0 no-repeat;
+	opacity: 0.7;
+}
+
+#header.collapsed .toggle-button  {
+	top: 15px;
+	right: 20px;
+}
+
+#notifications a {
+	display: inline-block;
+	height: 28px;
+	padding: 0 4px 0 12px;
+	margin-right: 10px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 2.1;
+	transition: background 0.2s ease-out 0;
+}
+
+#header.collapsed #notifications a {
+	height: 55px;
+	padding-right: 8px;
+	line-height: 3.8;
+}
+
+#notifications a b {
+	padding: 0 6px;
+	margin: 2px 0 0 8px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+#notifications .events {
+	background: #09C;
+}
+
+#notifications .events:hover {
+	background: #0BE;
+	transition: background 0.1s ease-out 0;	
+}
+
+#notifications .events:active {
+	background: #069;
+	transition: none;
+}
+
+#notifications .reminders {
+	background: #FA2;
+}
+
+#notifications .reminders:hover {
+	background: #FC3;
+	transition: background 0.1s ease-out 0;	
+}
+
+#notifications .reminders:active {
+	background: #C91;
+	transition: none;
+}
+
+#userclock {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 16px;
+	color: #555;
+}
+
+#header.collapsed #userclock {
+	right: 70px;	
+}
+
+#header #userclock:hover {
+	opacity: 1;
+}
+
+#header #userclock:active {
+	opacity: 0.7;
+}
+
+#userclock .number {
+	margin: 0 5px 0 0;
+	font-size: 24px;
+}
+
+#userclock .time {
+	margin: 0 0 0 20px;
+	font-size: 24px;
+	color: #DDD;
+}
+
+#content {
+
+}
+
+#content > div.first-column {
+	width: 480px;
+	border-right: solid 10px #e9e9e9;
+}
+
+#content div > .wrapper {
+	padding: 30px 20px 0 20px;
+}
+
+#content div.second-column{
+	margin-left: 0;
+}
+
+#content div.second-column > .wrapper {
+	padding-left: 30px;
+}
+
+.pull-right {
+	float: right;
+}
+
+div.first-column {
+	position: relative;
+	float: left;
+	width: 490px;
+	margin: 0 0 0 0;
+}
+
+div.second-column {
+	position: relative;
+	float: left;
+	margin: 0 0 0 30px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h2 > small {
+	font-size: 14px;
+}
+
+div.first-column h2 > small {
+	margin: 0 0 0 10px;
+}
+
+div.second-column h2 {
+	margin: 10px 0 0 0;
+}
+
+h4 {
+	height: 30px;
+	font-size: 14px;
+	line-height: 45px;
+}
+
+h4 a {
+	color: #09C;
+}
+
+h4 span.title {
+	color: #999;
+}
+
+strong {
+	font-weight: bold;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	border-bottom: solid 1px #999;
+}
+
+/* special blocks */
+
+.task-view .control {
+	margin: 30px 0 30px 0;
+}
+
+.task-view .control > a  {
+	display: inline-block;
+	height: 40px;
+	padding: 0 12px 0 1px;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 40px;
+	transition: all 0.2s ease-out 0;
+}
+
+.task-view .control > a.pause {
+	background: #09C;
+}
+
+.task-view .control > a.pause:hover {
+	background: #0BE;
+	transition: all 0.1s ease-out 0;	
+}
+
+.task-view .control > a.pause:active {
+	background: #07A;
+	transition: none;
+}
+
+.task-view .control > a.complete {
+	background: #6C0;
+}
+
+.task-view .control > a.complete:hover {
+	background: #8E0;
+	transition: all 0.1s ease-out 0;	
+}
+
+.task-view .control > a.complete:active {
+	background: #3A0;
+	transition: none;
+}
+
+.task-view .control > a > i {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+.task-view .control > a.pause > i {
+	background: url(images/iw-pause.png) 0 0 no-repeat;
+}
+
+.task-view .control > a.complete > i {
+	background: url(images/iw-complete.png) 0 0 no-repeat;
+}
+
+.task-view .control .status {
+	display: inline-block;
+	height: 40px;
+	background: #EEE;
+	padding: 0 10px 0 12px;
+}
+
+.task-view .control .status > span {
+	display: inline-block;
+	vertical-align: top;
+	margin: 14px 10px 0 0;
+}
+
+.task-view .control .status > b {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border: solid 2px #666;
+	margin: 10px 3px;
+}
+
+.task-view .control .status > b.complete {
+	border-color: #6C6;
+}
+.task-view .control .status > b.pause {
+	border-color: #FC3;
+}
+.task-view .control .status > b.issue {
+	border-color: #F99;
+}
+
+.task-view .control .status-complete > b.complete {
+	background: #6C6;
+}
+
+.task-view .control .status-issue > b.issue {
+	background: #F99;
+}
+
+.task-view .tabs li {
+	float: left;
+	color: #09C;
+	margin: 0 30px 0 0;
+	cursor: pointer;
+}
+
+.task-view .tabs li.active {
+	color: #000;
+}
+
+.task-view .tabs li:after {
+	display: block;
+	margin: 2px 1px 0;
+	border-top: dotted 1px #09C;
+	content: '';
+}
+
+.task-view .tabs li.active:after {
+	border-top: solid 4px #272727;
+	height: 6px;
+	background: url(images/bb-corner.png) center 0 no-repeat;
+}
+
+.task-list {
+	height: 600px;
+}
+
+.task-list .list {
+	width: 445px;
+}
+
+.task-list .list > div {
+	height: 40px;
+	width: 445px;
+	line-height: 40px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.task-list .list > div > i {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	margin: 0 10px 0 0;
+}
+
+.task-list .list > div.pause.status-orange:hover {
+	background: rgba(255, 170, 34, 0.3);
+}
+.task-list .list > div.pause.status-orange:active {
+	background: rgba(255, 170, 34, 0.5);
+}
+.task-list .list > div.pause.status-orange > i {
+	background: #FA2 url(images/iw-pause.png) 0 0 no-repeat;
+}

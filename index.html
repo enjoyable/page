@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test job</title>
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="jquery.min.js"></script>
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<div id="header" class="collapsed"><!-- available class collapsed/expanded -->
+			<div class="first-column">
+				<div id="userpic" class="online"><!-- available class online -->
+					<img src="images/userpic.png" alt="">
+					<div class="status"></div>
+					<div class="dropdown"></div>
+				</div>
+				<div id="username">
+					Константинопольский<br><!-- lastname -->
+					Константин Константинович<!-- firstname/patronymic -->
+				</div>
+				<div id="usermenu">
+					<a href="#" class="profile">
+						<i title="Профиль">&nbsp;</i><!-- tag I like icon :) -->
+						<span>Профиль</span>
+					</a>
+					<a href="#" class="settings">
+						<i title="Настройки">&nbsp;</i>
+						<span>Настройки</span>
+					</a>
+					<a href="#" class="logout">
+						<i title="Выход">&nbsp;</i>
+						<span>Выход</span>
+					</a>
+				</div>
+			</div>
+			<div class="second-column">
+				<div id="notifications">
+					<a href="#" class="events">
+						<span>События</span>
+						<b>2</b><!-- tag B like badge :) -->
+					</a>
+					<a href="#" class="reminders">
+						<span>Напоминания</span>
+						<b>5</b>
+					</a>
+				</div>
+				<div id="userclock">
+					<span class="number">14</span> сентября <span class="time">11:23</span>
+				</div>
+				<a href="#" class="toggle-button"></a>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+		<div id="content">
+			<div class="first-column">
+				<div class="wrapper task-list">
+					<h2>Задачи <small>Загрузка на <strong>Сентябрь</strong> - 178 из 168 ч.</small></h2>
+
+					<div class="list">
+
+						<div class="pause status-orange">
+							<i>&nbsp;</i>
+							Настройка TFS
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="second-column">
+				<div class="wrapper task-view">
+					<h4>
+						<span class="title">Проект:</span> <a href="#">Сервер SR-3</a>
+						<div class="pull-right">
+							<span class="title">Изменялась:</span>
+							10.09.2013 в 16:45 (13 дней назад)
+						</div>
+					</h4>
+
+					<div class="clearfix"></div>
+
+					<h2>Задача: Установка TFS на сервер SR-3</h2>
+
+					<div class="control">
+						<a href="#" class="pause">
+							<i>&nbsp;</i>
+							Пауза
+						</a>
+						<a href="#" class="complete">
+							<i>&nbsp;</i>
+							Готово
+						</a>
+
+						<div class="status status-issue pull-right">
+							<span>Статус задачи:</span>
+							<b class="complete"></b>
+							<b class="pause"></b>
+							<b class="issue"></b>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<div class="wrapper task-view">
+					<ul class="tabs">
+						<li>
+							Детали
+							<div></div>
+						</li>
+						<li class="active">
+							Состояние
+							<div></div>
+						</li>
+						<li>
+							Есть проблема
+							<div></div>
+						</li>
+						<li>
+							История
+							<div></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		setInterval(function(){resizeSecondColumn()}, 400);
+
+		$('#header').bounce();
+	</script>
+</html>
